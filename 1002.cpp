@@ -23,6 +23,9 @@ void numToChinese(int n)
     {
         switch(n%10)
         {
+            case 0:
+                st.push("ling");
+                break;
             case 1:
                 st.push("yi");
                 break;
@@ -69,5 +72,4 @@ int main()
     cin>>s;
     n=NumToSum(s);
     numToChinese(n);
-    cout<<"******";
 }
