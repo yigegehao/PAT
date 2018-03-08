@@ -21,6 +21,29 @@ void findKey(set<int> &s)
                  s.erase(iter);
         }
     }
+    for(auto i=s.rbegin(),j=s.rend();i!=j;i++)
+    {
+        if(i!=s.rbegin())
+        {
+            cout<<" ";
+        }
+        cout<<*i;
+    }
+    /*µÚ¶þÖÖ
+    set<int>::reverse_iterator last=s.rend();
+    last--;
+    for(set<int>::reverse_iterator ibeg=s.rbegin();ibeg!=s.rend();ibeg++)
+    {
+        if(ibeg==last)
+        {
+            cout<<*ibeg;
+            break;
+        }
+        cout<<*ibeg<<" ";
+    }
+    cout<<"****"<<endl;
+    */
+    /*
     set<int>::iterator ibeg,iend;
     ibeg=s.begin();
     iend=s.end();
@@ -35,6 +58,7 @@ void findKey(set<int> &s)
             break;
         }
     }
+    */
 }
 
 int main()
