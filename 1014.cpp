@@ -14,19 +14,26 @@ void printWeek(char d)
         case 3:cout<<"THU"<<" ";break;
         case 4:cout<<"FRI"<<" ";break;
         case 5:cout<<"SAT"<<" ";break;
-        case 6:cout<<"SUM"<<" ";break;
+        case 6:cout<<"SUN"<<" ";break;
     }
 }
-void printHour(char h)
+int printHour(char h)
 {
     int c;
     if(h>='A'&&h<='Z')
+    {
         c=h-'A'+10;
-    else if(h=='0')
-        c=0;
-    else
+        cout<<c;
+    }
+    else if(h>='0'&&h<='9')
+    {
         c=h-'0';
-    cout<<c;
+        cout<<'0'<<c;
+    }
+    else
+        return -1;
+
+    return c;
 }
 void printMinute(string c,string d)
 {
@@ -63,6 +70,12 @@ void deal(string a,string b,string c,string d)
                 printHour(a[i]);
                 break;
             }
+        }
+        else if(tag1==-1)
+        {
+            if(a[i]==b[i])
+                if(printHour(a[i])!=-1)
+                    break;
         }
     }
     printMinute(c,d);
